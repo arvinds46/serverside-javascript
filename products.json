@@ -1,0 +1,20 @@
+[
+    {
+        "id":1,
+        "name":"Pencil",
+        "price":20.00,
+        "rating":4.6
+    },
+    {
+        "id":2,
+        "name":"Pen",
+        "price":45.00,
+        "rating":4.5
+    },
+    {
+        "id":3,
+        "name":"Scale",
+        "price":10.00,
+        "rating":4.2
+    }
+]
