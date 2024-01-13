@@ -29,22 +29,32 @@ http.createServer((req,res)=>{
             if (found != undefined)
                 res.end(JSON.stringify(found));
             else
-                res.end("No User Available")
+                res.end("No User Available");
         } catch (error) {
-            res.end("Error Occured..")
+            res.end("Error Occured..");
         }
     }
     if (req.url.match(/\/api\/users\/([0-9]+)/) && req.method=='DELETE') {
         try {
             const id = req.url.split("/")[3];
             users= users.filter((item)=>item.id!=id)
-            res.end("User Deleted Successfully")
+            res.end("User Deleted Successfully");
         } catch (error) {
-            res.end("Error Occured..")
+            res.end("Error Occured..");
         }
     }
     if (req.url.match(/\/api\/users\/([0-9]+)/) && req.method=='PUT') {
-        //Update Logic
+        try {
+            const id = req.url.split("/")[3];
+            users.find((o, i) => {
+                if (o.id === id) {
+                    users[i] = { "name": req.name, "email": req.email };
+                }
+            });
+            res.end("User Updated Successfully");
+        } catch (error) {
+            res.end("Error Occured..");
+        }
     }
 }).listen(5000,()=>{
     console.log("Server Started");

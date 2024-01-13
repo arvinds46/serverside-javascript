@@ -1,0 +1,16 @@
+html(lang="en")
+    head
+        title #{title}
+    body
+        h1 This is My Header
+        hr
+        header
+            h2 Navbar
+            nav
+                ul
+                    li
+                        a(href='/home') Home
+                    li
+                        a(href='/about') About
+        block content
+        block more_content

@@ -1,0 +1,10 @@
+html
+    head
+        title Catalogue
+    body
+        h1 Catalogue
+        hr
+        ul
+            each product in products
+                li
+                    | Product Name: #{product.name}, Price: #{product.price}, Rating: #{product.rating}
